@@ -1,0 +1,43 @@
+.card {
+  width: 300px; 
+  height: 416px;
+  margin: 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out; 
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3); 
+}
+
+
+.button {
+  background-color: transparent;
+  border: none; 
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.cardTitle {
+  font-size: 24px; 
+  text-align: center;
+ 
+}
+
+.imageCard {
+  width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: grayscale(10%);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}

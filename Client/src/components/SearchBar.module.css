@@ -1,0 +1,29 @@
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.searchInput {
+  border-radius: 10px;
+  height: 2em;
+}
+
+.barButton {
+  margin-left: 10px;
+  background-color: #3a9679;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: #333;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  }
+
+  .barButton:hover {
+    background-color: #2fdba4;
+  }

@@ -1,0 +1,42 @@
+.navContent {
+    
+    height: 50px;
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navButton {
+    background-color: #3a9679;
+    font-size: 17px;
+    font-weight: 650;
+    font-family: sans-serif;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .navButton:hover {
+    background-color: #2fdba4;
+  }
+
+  .logoutButton {
+    background-color: #3a9679; 
+    color: black; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .logoutButton:hover {
+    background-color: #cc0000; 
+    
+  }

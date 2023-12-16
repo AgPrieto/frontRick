@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.icontainer {
+    background-color: rgba(3, 3, 3, 0.5);   
+    width: fit-content;
+    width: 50%;
+    height: 65vh;
+}
+
+.infoContainer {
+    padding: 2em;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    height: 58.2vh;
+}
+
+.image {
+    margin-top: 20px; 
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.words {
+    color: #fff; 
+    font-size: 45px
+}
+
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loadingMessage {
+    color: #000000;
+    font-size: 2em;
+    font-weight: bold;
+}

@@ -1,0 +1,9 @@
+.div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    margin: auto;
+    padding: 1em;
+    width: 80%;
+  }

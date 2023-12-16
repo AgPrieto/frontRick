@@ -1,0 +1,22 @@
+
+.div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  margin: auto;
+  padding: 1em;
+  width: 80%;
+  }
+
+  .selects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+    height: 2em;  
+    margin: auto;
+    width: 11%;  
+  }
+
+  

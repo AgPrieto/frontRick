@@ -1,0 +1,104 @@
+.all {
+    background-image: url("https://images5.alphacoders.com/133/1335149.jpg");
+    position: relative;
+    text-align: center;
+    background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed; 
+   min-height: 100vh; 
+}
+
+
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-image: url("https://images.alphacoders.com/876/876589.jpg");
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    text-align: center;
+    margin-left: 1200px;
+    padding: 2em;
+    margin-top: 40px;
+    height: 750px;
+  }
+
+  .inputGroup {
+    margin-bottom: 20px;
+   
+  }
+  
+  .inputGroup input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 25px;
+  }
+  
+  .inputGroup input:focus {
+    outline: none;
+    border-color: #3a9679;
+    border-width: 3px;
+  }
+
+  .buttonSignUp {
+    background-color: #3a9679;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .buttonSignUp:hover {
+    background-color: #2fdba4;
+  }
+
+  .labels {
+    color: white;
+    font-weight: 600;
+  }
+
+  .h1 {
+    color: white;
+    font-size: 27px;
+    margin-bottom: 30px;
+  }
+
+  .errorMessage {
+    color: red;
+    margin-top: 10px;
+  }
+
+  .successMessage {
+    color: green;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+
+  .backButton {
+    background-color: #3a9679;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-right: 1750px;
+    width: 100px;
+    height: 50px;
+  }
+
+  .backButton:hover {
+    background-color: #2fdba4;
+  }
