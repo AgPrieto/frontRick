@@ -38,7 +38,7 @@ const logOut = ()=> {
   async function login(userData) {
     try {
       const { email, password } = userData;
-      const URL = `https://rickandmorty-m1d3.onrender.com/rickandmorty/login/?email=${email}&password=${password}`;
+      const URL = `https://server-rickandmorty.onrender.com/rickandmorty/login/?email=${email}&password=${password}`;
       const response = await axios.get(URL);
       const { data } = response;
   

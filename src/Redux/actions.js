@@ -7,7 +7,7 @@ export const addFav = (character) =>  {
     
     return async (dispatch) => {
     console.log(character);
-    const endpoint = 'https://rickandmorty-m1d3.onrender.com/rickandmorty/fav';
+    const endpoint = 'https://server-rickandmorty.onrender.com/rickandmorty/fav';
     const response = await axios.post(endpoint, character);
     
     const { data } = response;
@@ -27,7 +27,7 @@ export const addFav = (character) =>  {
 
  export const removeFav = (id) => async (dispatch) => {
    try {
-     const endpoint = `https://rickandmorty-m1d3.onrender.com/rickandmorty/fav/${id}`;
+     const endpoint = `https://server-rickandmorty.onrender.com/rickandmorty/fav/${id}`;
      const response = await axios.delete(endpoint);
      const { data } = response;
  
@@ -55,7 +55,7 @@ export const orderCards = (order) => {
 
 export const checkEmail = async (email) => {
   try {
-    const response = await axios.get(`https://rickandmorty-m1d3.onrender.com/rickandmorty/register?email=${email}`);
+    const response = await axios.get(`https://server-rickandmorty.onrender.com/rickandmorty/register?email=${email}`);
     const exists = response.data;  
 
     if (exists) {
@@ -73,7 +73,7 @@ export const checkEmail = async (email) => {
 export const createUser = (user) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post(`https://rickandmorty-m1d3.onrender.com/rickandmorty/login`, user);
+      const response = await axios.post(`https://server-rickandmorty.onrender.com/rickandmorty/login`, user);
       const newUser = response.data;
 
       if (newUser) {
