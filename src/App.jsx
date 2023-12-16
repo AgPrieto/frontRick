@@ -55,7 +55,7 @@ const logOut = ()=> {
 
  const onSearch = async (id) => {
   try {
-    const response = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+    const response = await axios(`https://server-rickandmorty.onrender.com/rickandmorty/character/${id}`);
     const { data } = response;
 
     if (data.id) {
