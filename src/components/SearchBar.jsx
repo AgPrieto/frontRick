@@ -18,7 +18,7 @@ const generateRandomNumber = () => {
    return (
       <div className={styles.searchBar}>
           <input className={styles.searchInput} onChange={handleChange} type='search' value={id} />
-         <button className={styles.barButton} onClick={()=> onSearch(id)}>Add</button> 
+         <button className={styles.barButton} onClick={()=> onSearch(id)}>Agregar</button> 
          <button className={styles.barButton} onClick={generateRandomNumber}>Random</button> 
       </div>
    );

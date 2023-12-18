@@ -112,10 +112,7 @@ const Register = () => {
         
         setSuccessMessage('User Created');
         resetForm();
-        
-        setTimeout(function() {
-          navigate('/');
-      }, 1000);
+        navigate('/');
      
     }
   };

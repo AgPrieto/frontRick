@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Form.module.css"
 import {Link} from "react-router-dom";
-import LoginButton from "../components/loginButton";
 
 
 const Form = (props) => {
@@ -64,7 +63,6 @@ const Form = (props) => {
                 {errors.password && <div className={styles.errorMessage}>{errors.password}</div>}
                
                 <button className={styles.buttonLogin} type="submit">Submit</button>
-                <button><LoginButton /></button>
                 <Link to="/register">    
                 <p>You still don't have an account? Sign up</p>
                 </Link>

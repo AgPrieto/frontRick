@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Routes, Route } from "react-router-dom";
 import {useDispatch} from "react-redux";
-import { useAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 import './App.css';
 import {removeFav} from "./Redux/actions.js";
@@ -13,16 +12,14 @@ import Cards from './components/Cards.jsx';
 import About from './components/about.jsx';
 import Favorites from './components/Favorites';
 import Register from './components/register';
-import Profile from './components/profile';
-
 
 function App() {
 
   const dispatch = useDispatch();
 
 const logOut = ()=> {
-  const { logout } = useAuth0();
-  
+  setAccess(false);
+  navigate('/');
 }
 
 
@@ -38,14 +35,18 @@ const logOut = ()=> {
     }
   }, [access, location.pathname, navigate]);
 
-  async function login() {
+  async function login(userData) {
     try {
-      const { loginWithRedirect } = useAuth0();
+      const { email, password } = userData;
+      const URL = `https://server-rickandmorty.onrender.com/rickandmorty/login/?email=${email}&password=${password}`;
+      const response = await axios.get(URL);
+      const { data } = response;
   
-      // Llama a la función de Auth0 para iniciar sesión
-      await loginWithRedirect();
-  
-      // No es necesario el código de navegación aquí, ya que Auth0 manejará la redirección
+      const { access } = data;
+      setAccess(access);
+      if (access) {
+        navigate('/home');
+      }
     } catch (error) {
       console.error('Error during login:', error);
     }
@@ -90,7 +91,6 @@ const logOut = ()=> {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/favorites" element={<Favorites onClose={onClose}/>} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<Form onLogin={login} />} />
         
       </Routes>
