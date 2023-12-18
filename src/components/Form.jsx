@@ -41,17 +41,13 @@ const Form = (props) => {
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-    
-        if (errors.email === "" && errors.password === "") {
-            const loginSuccessful = await props.onLogin(userData);
-    
-            if (!loginSuccessful) {
-                setErrors({ ...errors, login: "Acceso denegado. Correo electrónico o contraseña incorrectos." });
-            }
-        }
-    };
+    const handleSubmit = (e) => {
+    e.preventDefault();
+   
+    if(errors.email === "" && errors.password === ""){
+        props.onLogin(userData);
+    }
+};
 
     return (
         <div className={styles.container}>
