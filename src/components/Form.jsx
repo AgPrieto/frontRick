@@ -42,12 +42,19 @@ const Form = (props) => {
     };
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-   
-    if(errors.email === "" && errors.password === ""){
-        props.onLogin(userData);
-    }
-};
+        e.preventDefault();
+      
+        
+        if (errors.email === "" && errors.password === "") {
+          props.onLogin(userData);
+        } else {
+          
+          setErrors({
+            email: "Email incorrecto",
+            password: "Contraseña incorrecta",
+          });
+        }
+      };
 
     return (
         <div className={styles.container}>
@@ -55,11 +62,11 @@ const Form = (props) => {
             <form onSubmit={handleSubmit}>
                 <div className={styles.inputGroup}>
                 <label className={styles.labels}>Email: </label>
-                <input type="text" value={userData.email} onChange={handleChange} onBlur={validateEmail} name="email" />
+                <input type="text" value={userData.email} onChange={handleChange} onBlur={validateEmail} name="email" className={`${styles.input} ${errors.email && styles.errorInput}`} />
                 {errors.email && <div className={styles.errorMessage}>{errors.email}</div>}
                 <br />
                 <label className={styles.labels}>Password: </label>
-                <input type="password" value={userData.password} onChange={handleChange} name="password" />
+                <input type="password" value={userData.password} onChange={handleChange} name="password" className={`${styles.input} ${errors.password && styles.errorInput}`} />
                 {errors.password && <div className={styles.errorMessage}>{errors.password}</div>}
                
                 <button className={styles.buttonLogin} type="submit">Submit</button>
