@@ -46,6 +46,8 @@ const logOut = ()=> {
       setAccess(access);
       if (access) {
         navigate('/home');
+      } else {
+        return false;
       }
     } catch (error) {
       console.error('Error during login:', error);
