@@ -1,4 +1,4 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER,CREATE_USER_SUCCESS,CREATE_USER_FAILURE, CHECK_CREDENTIALS_SUCCESS, CHECK_CREDENTIALS_FAILURE } from "./action-types";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER,CREATE_USER_SUCCESS,CREATE_USER_FAILURE } from "./action-types";
 
 
 const initialState = {
@@ -59,21 +59,6 @@ const reducer = (state = initialState, action) => {
         user: null,
         createUserError: action.payload,
       };
-
-      case CHECK_CREDENTIALS_SUCCESS:
-            return {
-                ...state,
-                isAuthenticated: true,
-                userData: action.payload,
-                error: null
-            };
-        case CHECK_CREDENTIALS_FAILURE:
-            return {
-                ...state,
-                isAuthenticated: false,
-                userData: null,
-                error: 'Acceso denegado. Correo electrónico o contraseña incorrectos.'
-            };
 
                 
 

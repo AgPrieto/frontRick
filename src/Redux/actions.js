@@ -1,4 +1,4 @@
-import {ADD_FAV, REMOVE_FAV, FILTER, ORDER, CREATE_USER_FAILURE, CREATE_USER_SUCCESS, CHECK_CREDENTIALS_SUCCESS, CHECK_CREDENTIALS_FAILURE} from "./action-types";
+import {ADD_FAV, REMOVE_FAV, FILTER, ORDER, CREATE_USER_FAILURE, CREATE_USER_SUCCESS} from "./action-types";
 import axios from 'axios';
 
 export const addFav = (character) =>  {
@@ -87,24 +87,6 @@ export const createUser = (user) => {
       console.error('Error creating user:', error);
       dispatch({ type: CREATE_USER_FAILURE, payload: 'Error creating user' });
       return null;
-    }
-  };
-};
-
-export const checkCredentials = (user) => {
-  return async (dispatch) => {
-    try {
-      const response = await axios.post(`https://server-rickandmorty.onrender.com/rickandmorty/login`, user);
-
-      if (response.ok) {
-        const userData = response.data;
-        dispatch({ type: CHECK_CREDENTIALS_SUCCESS, payload: userData });
-      } else {
-        dispatch({ type: CHECK_CREDENTIALS_FAILURE });
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-      dispatch({ type: CHECK_CREDENTIALS_FAILURE });
     }
   };
 };
