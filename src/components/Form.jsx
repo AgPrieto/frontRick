@@ -28,7 +28,7 @@ const Form = (props) => {
         if (userData.password.length >= 6 && userData.password.length <= 10 && /\d/.test(userData.password)) {
             setErrors({ ...errors, password: "" });
         } else {
-            setErrors({ ...errors, password: "Contraseña no válida. Debe tener entre 6 y 10 caracteres y contener al menos un número." });
+            setErrors({ ...errors, password: "Invalid password. Must be between 6 and 10 characters and contain at least one number" });
         }
     };
 
@@ -41,29 +41,17 @@ const Form = (props) => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-      
+    
         if (errors.email === "" && errors.password === "") {
-          props.onLogin(userData);
-        } else {
-          let emailError = "";
-          let passwordError = "";
-      
-          // Verifica y asigna mensajes de error específicos
-          if (errors.email) {
-            emailError = "Email incorrecto";
-          }
-          if (errors.password) {
-            passwordError = "Contraseña incorrecta";
-          }
-      
-          setErrors({
-            email: emailError,
-            password: passwordError,
-          });
+            const loginSuccessful = await props.onLogin(userData);
+    
+            if (!loginSuccessful) {
+                setErrors({ ...errors, login: "Acceso denegado. Correo electrónico o contraseña incorrectos." });
+            }
         }
-      };
+    };
 
     return (
         <div className={styles.container}>
