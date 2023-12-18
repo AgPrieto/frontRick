@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Form.module.css"
 import {Link} from "react-router-dom";
+import { checkCredentials } from "../Redux/actions";
 
 
 const Form = (props) => {
@@ -42,12 +43,17 @@ const Form = (props) => {
     };
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-   
-    if(errors.email === "" && errors.password === ""){
-        props.onLogin(userData);
-    }
-};
+        e.preventDefault();
+    
+        
+        const isValid = checkCredentials(userData.email, userData.password);
+    
+        if (!isValid) {
+            setErrors({ ...errors, email: "Email o contraseña incorrectos" });
+        } else if (errors.email === "" && errors.password === "") {
+            props.onLogin(userData);
+        }
+    };
 
     return (
         <div className={styles.container}>
