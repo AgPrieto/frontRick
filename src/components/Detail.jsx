@@ -40,7 +40,7 @@ const Detail = () => {
             ) : (
                 <div className={styles.loadingContainer}>
                    <RingLoader color="#000000" loading={true} size={60} margin={2} />
-                    <p className={styles.loadingMessage}>Cargando datos...</p>
+                    <p className={styles.loadingMessage}>Loading Data...</p>
                     
                 </div>
             )}
