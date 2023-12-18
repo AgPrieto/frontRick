@@ -42,16 +42,28 @@ const Form = (props) => {
     };
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-   
-    if(errors.email === "" && errors.password === ""){
-        props.onLogin(userData);
-    } else { setErrors({
-        email: "Email incorrecto",
-        password: "Contraseña incorrecta",
-      });
-    }
-};
+        e.preventDefault();
+      
+        if (errors.email === "" && errors.password === "") {
+          props.onLogin(userData);
+        } else {
+          let emailError = "";
+          let passwordError = "";
+      
+          // Verifica y asigna mensajes de error específicos
+          if (errors.email) {
+            emailError = "Email incorrecto";
+          }
+          if (errors.password) {
+            passwordError = "Contraseña incorrecta";
+          }
+      
+          setErrors({
+            email: emailError,
+            password: passwordError,
+          });
+        }
+      };
 
     return (
         <div className={styles.container}>
