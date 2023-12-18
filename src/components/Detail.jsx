@@ -11,7 +11,7 @@ const Detail = () => {
     const [character, setCharacter] = useState({})
 
     useEffect(() => {
-        axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+        axios(`https://server-rickandmorty.onrender.com/rickandmorty/character/${id}`).then(
           ({ data }) => {
             if (data.name) {
               setCharacter(data);
